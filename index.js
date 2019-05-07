@@ -189,7 +189,7 @@ ads1x15.prototype.readADCSingleEnded = function(channel, pga, sps, callback) {
       }
     }
     // Set PGA/voltage range, defaults to +-6.144V
-    if (!(pgaADS1x15[pga]))
+    if ( "undefined" === typeof pgaADS1x15[pga] )
     {
       self.busy = false;
       callback("ADS1x15: Invalid pga specified");
